@@ -31,6 +31,12 @@ module.exports = {
       agentId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: {
+          model: "agents",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",
       },
       createdAt: {
         allowNull: false,
